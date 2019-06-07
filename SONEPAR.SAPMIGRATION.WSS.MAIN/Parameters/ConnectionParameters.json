@@ -1,0 +1,28 @@
+﻿{
+	"Companies":[
+				  {
+				  "XMLAsString":true
+				  ,"Server":"192.168.2.232"
+				  ,"LicenseServer":"192.168.2.232:30000"
+				  ,"DbServerType":"dst_MSSQL2014"
+				  ,"DbUserName":"sa"
+				  ,"DbPassword":"sa$2018"
+				  ,"CompanyDB":"FE_SBO_SONEPAR"
+				  ,"UserName":"manager"
+				  ,"Password":"2019System"
+				  ,"UseTrusted":true
+				  }
+				 ,{
+				  "XMLAsString":true
+				  ,"Server":"192.168.2.232"
+				  ,"LicenseServer":"192.168.2.232:30000"
+				  ,"DbServerType":"dst_MSSQL2014"
+				  ,"DbUserName":"sa"
+				  ,"DbPassword":"sa$2018"
+				  ,"CompanyDB":"FE_SBO_SONEPAR"
+				  ,"UserName":"manager"
+				  ,"Password":"2019System"
+				  ,"UseTrusted":true
+				  }
+			  ]
+}

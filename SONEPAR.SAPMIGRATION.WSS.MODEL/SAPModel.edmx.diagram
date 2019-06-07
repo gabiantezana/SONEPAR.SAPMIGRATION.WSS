@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fc5b7a1d41d04f27b474cdce0c4939c5" Name="Diagram1" ZoomLevel="10">
+        <EntityTypeShape EntityType="SAPModel.OCRD" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SAPModel.OSLP" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SAPModel.ORDR" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SAPModel.OCPR" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SAPModel.OHEM" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SAPModel.OITW" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SAPModel.RDR1" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SAPModel.OITM" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SAPModel.OPRJ" Width="1.5" PointX="17.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

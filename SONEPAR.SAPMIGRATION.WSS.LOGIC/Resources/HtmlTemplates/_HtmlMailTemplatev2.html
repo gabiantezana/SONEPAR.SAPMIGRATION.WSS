@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" media="all" href="/assets/application-mailer-dbc5154d3c4160e8fa7ef52fa740fa402760c39b5d22c8f6d64ad5999499d263.css" />
+    <style>
+        <!--
+        Add custom styles that you want inlined here -->
+    </style>
+</head>
+<!-- Edit the code below this line -->
+<body class="bg-light">
+    <preview>Thank you for riding with Lyft!</preview>
+    <div class="container">
+        <!-- <img class="mx-auto mt-4 mb-3" width="42" height="30" src="https://s3.amazonaws.com/lyft.zimride.com/images/emails/logo/v2/logo_44@2x.png" /> -->
+
+        <div class="card mb-4" style="border-top: 5px solid #ff00bf;">
+            <div class="card-body">
+                <!--LOGO AMP-->
+                <img class="mx-auto" width="250" height="120" src="https://northeurope1-mediap.svc.ms/transform/thumbnail?provider=spo&inputFormat=png&cs=fFNQTw&docid=https%3A%2F%2Fsonepar-my.sharepoint.com%3A443%2F_api%2Fv2.0%2Fdrives%2Fb!AMO2NwdR5kyAz2qXFrT7toeGJSlRJA9HmXmwUbMjrR_aERAUN2-STJrE11yS6MDy%2Fitems%2F01KETWH53WGTGBRUYFDJDYIIRAXQEKIYCE%3Fversion%3DPublished&encodeFailures=1&ctag=%22c%3A%7B18CC3476-05D3-471A-8422-20BC08A46044%7D%2C2%22&width=510&height=184&srcWidth=510&srcHeight=184" />
+                <!--LOGO DIROME-->
+                <img class="mx-auto" width="250" height="120" src="https://northeurope1-mediap.svc.ms/transform/thumbnail?provider=spo&inputFormat=png&cs=fFNQTw&docid=https%3A%2F%2Fsonepar-my.sharepoint.com%3A443%2F_api%2Fv2.0%2Fdrives%2Fb!AMO2NwdR5kyAz2qXFrT7toeGJSlRJA9HmXmwUbMjrR_aERAUN2-STJrE11yS6MDy%2Fitems%2F01KETWH56NJZA4FZJNYRHZJ3SHP3Y6ACKR%3Fversion%3DPublished&encodeFailures=1&ctag=%22c%3A%7BC2414ECD-2DE5-4FC4-94EE-477EF1E00951%7D%2C2%22&width=1366&height=481&srcWidth=1966&srcHeight=692" />
+                <!--LOGO VYF-->
+                <img class="mx-auto" width="250" height="120" src="https://northeurope1-mediap.svc.ms/transform/thumbnail?provider=spo&inputFormat=png&cs=fFNQTw&docid=https%3A%2F%2Fsonepar-my.sharepoint.com%3A443%2F_api%2Fv2.0%2Fdrives%2Fb!AMO2NwdR5kyAz2qXFrT7toeGJSlRJA9HmXmwUbMjrR_aERAUN2-STJrE11yS6MDy%2Fitems%2F01KETWH56UA2EWAYCKSZFINC6HP3ZBXARL%3Fversion%3DPublished&encodeFailures=1&ctag=%22c%3A%7B608906D4-4A60-4A96-868B-C77EF21B822B%7D%2C2%22&width=338&height=208&srcWidth=338&srcHeight=208" />
+                <!--LOGO SONEPAR-->
+                <img class="mx-auto" width="250" height="120" src="https://northeurope1-mediap.svc.ms/transform/thumbnail?provider=spo&inputFormat=jpg&cs=fFNQTw&docid=https%3A%2F%2Fsonepar-my.sharepoint.com%3A443%2F_api%2Fv2.0%2Fdrives%2Fb!AMO2NwdR5kyAz2qXFrT7toeGJSlRJA9HmXmwUbMjrR_aERAUN2-STJrE11yS6MDy%2Fitems%2F01KETWH54DM34T7EMT6RGINXBNQDBNAWDC%3Fversion%3DPublished&encodeFailures=1&ctag=%22c%3A%7B3FF96683-9391-4CF4-86DC-2D80C2D05862%7D%2C2%22&width=617&height=617&srcWidth=2000&srcHeight=2000" />
+                <hr>
+                <!-------------------------------HEADER TABLE--------------------------->
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td style="border-top: 0;"><h6 class="text-left"><strong>Cliente:</strong></h6></td>
+                            <td style="border-top: 0;">@Model.NombreCliente</td>
+                        </tr>
+                        <tr>
+                            <td style="border-top: 0;"><h6 class="text-left"><strong>Dirección de entrega :</strong></h6></td>
+                            <td style="border-top: 0;">@Model.DireccionDeEntrega</td>
+                        </tr>
+                        <tr>
+                            <td style="border-top: 0;"><h6 class="text-left"><strong>Nº O/C Cliente:</strong></h6></td>
+                            <td style="border-top: 0;">@Model.NumeroDocumentoCliente</td>
+                        </tr>
+                        <tr>
+                            <td style="border-top: 0;"><h6 class="text-left"><strong>Nº OV:</strong></h6></td>
+                            <td style="border-top: 0;">@Model.NumeroDocumentoSAP</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <!--------------------------------------------------------------TABLA DETALLE-------------------------------------------------------------->
+                <table class="table table-striped ">
+                    <thead>
+                        <tr>
+                            <th style="border-top: 0;" bgcolor="#ABB8CA"><h6 class="text-right"><strong>Ítem</strong></h6></th>
+                            <th style="border-top: 0;" bgcolor="#ABB8CA"><h6><strong>Referencia</strong></h6></th>
+                            <th style="border-top: 0;" bgcolor="#ABB8CA"><h6><strong>Descripción</strong></h6></th>
+                            <th style="border-top: 0;" bgcolor="#ABB8CA"><h6><strong>U.M</strong></h6></th>
+                            <div id="ColumnasFechaYCategoria">
+                                <th style="border-top: 0;" bgcolor="#ABB8CA"><h6><strong>Fecha entrega</strong></h6></th>
+                                <th style="border-top: 0;" bgcolor="#ABB8CA"><h6><strong>Categoría</strong></h6></th>
+                            </div>
+                            <th style="border-top: 0;" bgcolor="#ABB8CA"><h6 class="text-right"><strong>Cantidad</strong></h6></th>
+                            <th style="border-top: 0;" bgcolor="#ABB8CA"><h6 class="text-right"><strong>Precio</strong></h6></th>
+                            <th style="border-top: 0;" bgcolor="#ABB8CA"><h6 class="text-right"><strong>S. Total</strong></h6></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-striped">
+
+                        @{
+                        foreach(var item in @Model.DetalleDocumentoList)
+                        {
+                        <tr>
+                            <th scope="row"></th>
+                            <td>@item.Referencia</td>
+                            <td>@item.Descripcion</td>
+                            <td>@item.UM</td>
+                            <div id="ColumnasFechaYCategoria">
+                                <td>@item.FechaEntrega</td>
+                                <td>@item.Categoria</td>
+                            </div>
+                            <td class="text-right">@item.Cantidad</td>
+                            <td class="text-right">@item.Precio</td>
+                            <td class="text-right">@item.STotal</td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7"> <h6 class="text-right"> <strong>SUB TOTAL</strong></h6></td>
+                            <td> <h6 class="text-right"> <strong>@Model.Moneda</strong></h6></td>
+                            <td><h5 class="text-right"><strong>@Model.MontoSubTotal</strong></h5></td>
+                        </tr>
+                        <tr>
+                            <td style="border-top: 0;" colspan="7"> <h6 class="text-right"> <strong>I.G.V.</strong></h6></td>
+                            <td style="border-top: 0;"> <h6 class="text-right"> <strong>@Model.Moneda</strong></h6></td>
+                            <td style="border-top: 0;"> <h5 class="text-right"><strong>@Model.MontoIGV</strong></h5></td>
+                        </tr>
+                        <tr>
+                            <td style="border-top: 0;" colspan="7"> <h6 class="text-right"> <strong>TOTAL</strong></h6></td>
+                            <td style="border-top: 0;"><h6 class="text-right"> <strong>@Model.Moneda</strong></h6></td>
+                            <td style="border-top: 0;"><h5 class="text-right"><strong>@Model.MontoTotal</strong></h5> </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <!--Firma de gestor-->
+        <div class="card w-100 mb-4">
+            <div class="card-body">
+                <img width="50" height="50" class="mx-auto" src="https://s3.amazonaws.com/lyft.zimride.com/images/emails/enterprise/briefcase_dark_large.png">
+                <h5 class="text-center" style="color:#323EAB  "> <strong> @Model.GestorNombre</strong></h5>
+                <p class="text-center" style="color:#323EAB  ">Teléfono: @Model.GestorTelefono</p>
+                <p class="text-center" style="color:#323EAB  ">Correo: @Model.GestorCorreo</p>
+                <img class="mx-auto" width="200" height="200" src="https://northeurope1-mediap.svc.ms/transform/thumbnail?provider=spo&inputFormat=jpg&cs=fFNQTw&docid=https%3A%2F%2Fsonepar-my.sharepoint.com%3A443%2F_api%2Fv2.0%2Fdrives%2Fb!AMO2NwdR5kyAz2qXFrT7toeGJSlRJA9HmXmwUbMjrR_aERAUN2-STJrE11yS6MDy%2Fitems%2F01KETWH54DM34T7EMT6RGINXBNQDBNAWDC%3Fversion%3DPublished&encodeFailures=1&ctag=%22c%3A%7B3FF96683-9391-4CF4-86DC-2D80C2D05862%7D%2C2%22&width=617&height=617&srcWidth=2000&srcHeight=2000" />
+            </div>
+        </div>
+        <!--Nota libro de reclamaciones-->
+        <div class="text-center text-muted">*Para cualquier consulta de preferencia indicar el Nº OV V&F correspondiente.</div>
+        <div class="text-center text-muted">*Si desea presentar algún reclamo y/o disconformidad escribanos a librodereclamaciones@sonepar.pe</div>
+
+        <!--PIE DE PÁGINA-->
+        <!--
+          <div class="text-center text-muted">Pricing FAQ · Help Center</div>
+          <div class="text-center text-muted">Receipt #qwertyuiopasdfghjklzxcvbnm</div>
+          <div class="text-center text-muted mb-4">Map data © OpenStreetMap contributors</div>
+
+          <table class="table-unstyled text-muted mb-4">
+            <tbody>
+              <tr>
+                <td>© Lyft 2017</td>
+                <td>
+                  <img class="float-right pl-2" width="20" height="20" src="https://s3.amazonaws.com/lyft.zimride.com/images/emails/social/v2/facebook@2x.png"/>
+                  <img class="float-right pl-2" width="20" height="20" src="https://s3.amazonaws.com/lyft.zimride.com/images/emails/social/v2/twitter@2x.png"/>
+                  <img class="float-right" width="20" height="20" src="https://s3.amazonaws.com/lyft.zimride.com/images/emails/social/v2/instagram@2x.png"/>
+
+                </td>
+              </tr>
+              <tr>
+                <td>548 Market St #68514</td>
+                <td class="text-right">Work at Lyft</td>
+              </tr>
+              <tr>
+                <td>San Francisco, CA 94104</td>
+                <td class="text-right">Become a Driver</td>
+              </tr>
+            </tbody>
+          </table>
+        -->
+    </div>
+
+</body>
+</html>

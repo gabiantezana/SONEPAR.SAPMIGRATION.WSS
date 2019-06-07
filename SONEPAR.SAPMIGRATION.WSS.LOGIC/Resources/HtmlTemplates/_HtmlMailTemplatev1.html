@@ -1,0 +1,104 @@
+<html>
+<head>
+    <h1>SONEPAR PERÚ S.A.C.</h1>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <!--Datos cabecera-->
+    <table class="table table-sm">
+        <tbody>
+            <tr>
+                <td>Cliente:</td>
+                <td>@Model.NombreCliente</td>
+            </tr>
+            <tr>
+                <td>Dirección de entrega:</td>
+                <td>@Model.DireccionDeEntrega</td>
+            </tr>
+            <tr>
+                <td>Nº O/C Cliente:</td>
+                <td>@Model.NumeroDocumentoCliente</td>
+            </tr>
+            <tr>
+                <td>Nº OV V&F:</td>
+                <td>@Model.NumeroDocumentoSAP</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <!--Datos detalle-->
+    <table class="table table-sm" style="width:100%">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Ítem</th>
+                <th scope="col">Referencia</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">U.M</th>
+                <div id="ColumnasFechaYCategoria">
+                    <th scope="col">Fecha de entrega</th>
+                    <th scope="col">Categoría</th>
+                </div>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">S. Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Detalle tabla-->
+            @{
+            foreach(var item in @Model.DetalleDocumentoList)
+            {
+            <tr>
+                <th scope="row">1</th>
+                <td>@item.Referencia</td>
+                <td>@item.Descripcion</td>
+                <td>@item.UM</td>
+                <div id="ColumnasFechaYCategoria">
+                    <td>@item.FechaEntrega</td>
+                    <td>@item.Categoria</td>
+                </div>
+                <td class="text-right">@item.Cantidad</td>
+                <td class="text-right">@item.Precio</td>
+                <td class="text-right">@item.STotal</td>
+            </tr>
+            }
+            }
+
+
+            <tr class="text-right">
+                <th colspan="7">SUB TOTAL</th>
+                <th>@Model.Moneda</th>
+                <th>@Model.MontoSubTotal</th>
+            </tr>
+            <tr class="text-right">
+                <th colspan="7">I.G.V.</th>
+                <th>@Model.Moneda</th>
+                <th>@Model.MontoIGV</th>
+            </tr>
+            <tr class="text-right">
+                <th colspan="7">TOTAL</th>
+                <th>@Model.Moneda</th>
+                <th>@Model.MontoTotal</th>
+            </tr>
+        </tbody>
+    </table>
+    <!--Nota consulta-->
+    <p>Nota : Para cualquier consulta de preferencia indicar el Nº OV V&F correspondiente.</p>
+
+    <!--Firma de gestor-->
+    <p style="text-align: center; color:blue">
+        @Model.GestorNombre <br>
+        Teléfono: @Model.GestorTelefono <br>
+        Correo: @Model.GestorCorreo <br>
+    </p>
+    <br>
+    <!--Nota libro de reclamaciones-->
+    <p style="text-align: center">NOTA: Si desea presentar algún reclamo y/o disconformidad escribanos a librodereclamaciones@sonepar.pe</p>
+</body>
+</html>
+
+
+
+
+
+

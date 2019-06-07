@@ -1,0 +1,159 @@
+﻿<html>
+<head>
+    <!--
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    -->
+
+
+
+</head>
+<body style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji">
+    <!--Datos cabecera-->
+    @{
+    switch(@Model.SucursalNombre)
+    {
+    case "1": //LIMA
+        <img src="cid:logo_vyf.png" height="150" width="200" style="display: block; margin-left: auto; margin-right: auto;">
+    break;
+
+    case "2": //NORTE:
+        <img src="cid:logo_dirome.png" height="150" width="200" style="display: block; margin-left: auto; margin-right: auto;">
+    break;
+
+    case "3": //"SUR":
+        <img src="cid:logo_amp.png" height="150" width="200" style="display: block; margin-left: auto; margin-right: auto;">
+    break;
+
+    default:
+        <img src="cid:logo_sonepar.jpg" height="150" width="200" style="display: block; margin-left: auto; margin-right: auto;">
+    break;
+    }
+    }
+
+    <br />
+    <table style="border:0;">
+        <tbody>
+            <tr>
+                <td>Cliente:</td>
+                <td>@Model.NombreCliente</td>
+            </tr>
+            <tr>
+                <td>Dirección de entrega:</td>
+                <td>@Model.DireccionDeEntrega</td>
+            </tr>
+            <tr>
+                <td>Nº O/C Cliente:</td>
+                <td>@Model.NumeroDocumentoCliente</td>
+            </tr>
+            <tr>
+                <td>Nº OV:</td>
+                <td>@Model.NumeroDocumentoSAP</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <!--Datos detalle-->
+    <table class="table table-sm" style="width:100%; border:0; border-collapse: collapse">
+        <thead style="   color: #fff;
+            background-color: #343a40;
+            border-color: #454d55;">
+            <tr>
+                <th scope="col">Ítem</th>
+                <th scope="col">Referencia</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">U.M</th>
+                <div id="ColumnasFechaYCategoria">
+                    <th scope="col">Fecha de entrega</th>
+                    <th scope="col">Categoría</th>
+                </div>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">S. Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Detalle tabla-->
+            @{
+            foreach(var item in @Model.DetalleDocumentoList)
+            {
+            <tr>
+                <th scope="row">#</th>
+                <td>@item.Referencia</td>
+                <td>@item.Descripcion</td>
+                <td>@item.UM</td>
+                <div id="ColumnasFechaYCategoria">
+                    <td>@item.FechaEntrega</td>
+                    <td>@item.Categoria</td>
+                </div>
+                <td class="text-right">@item.Cantidad</td>
+                <td class="text-right">@item.Precio</td>
+                <td class="text-right">@item.STotal</td>
+            </tr>
+            }
+            }
+
+
+            <tr class="text-right">
+                <th colspan="7">SUB TOTAL</th>
+                <th>@Model.Moneda</th>
+                <th>@Model.MontoSubTotal</th>
+            </tr>
+            <tr class="text-right">
+                <th colspan="7">I.G.V.</th>
+                <th>@Model.Moneda</th>
+                <th>@Model.MontoIGV</th>
+            </tr>
+            <tr class="text-right">
+                <th colspan="7">TOTAL</th>
+                <th>@Model.Moneda</th>
+                <th>@Model.MontoTotal</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <!--Firma de gestor-->
+    <p style="text-align: center; color:#1D4B8A">
+        <strong>@Model.GestorNombre </strong> <br />
+        <strong>Teléfono: </strong>@Model.GestorTelefono <br />
+        <strong>Correo:</strong> @Model.GestorCorreo <br />
+
+        @{
+        switch(@Model.SucursalNombre)
+        {
+        case "1": //LIMA
+            <img src="cid:logo_vyf.png" height="75" width="100" style="display: block; margin-left: auto; margin-right: auto;">
+        break;
+
+        case "2": //NORTE:
+            <img src="cid:logo_dirome.png" height="75" width="100" style="display: block; margin-left: auto; margin-right: auto;">
+        break;
+
+        case "3": //"SUR":
+            <img src="cid:logo_amp.png" height="75" width="100" style="display: block; margin-left: auto; margin-right: auto;">
+        break;
+
+        default:
+        <!--<div style="display:inline-block; text-align:center">-->
+            <img src="cid:logo_sonepar.jpg" height="75" width="100" style="display: block; margin-left: auto; margin-right: auto;">
+        <!--</div>-->
+        break;
+        }
+        }
+    </p>
+
+    <br />
+    <!--Nota consulta-->
+    <p style="text-align: center; color:#3D3D44  ">
+        *Para cualquier consulta de preferencia indicar el Nº OV correspondiente.<br />
+        *Si desea presentar algún reclamo y/o disconformidad escribanos a librodereclamaciones@sonepar.pe
+    </p>
+    <!--Nota libro de reclamaciones-->
+    <p style="text-align: center"></p>
+</body>
+</html>

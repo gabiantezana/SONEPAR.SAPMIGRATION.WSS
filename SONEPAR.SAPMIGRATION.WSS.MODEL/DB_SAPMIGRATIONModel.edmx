@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_SAPMIGRATIONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MigrationDocument">
+          <Key>
+            <PropertyRef Name="_MigrationDocumentId" />
+          </Key>
+          <Property Name="_MigrationDocumentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="_ExternalId" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DocObjectCode" Type="int" Nullable="false" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="DocumentSubType" Type="int" />
+          <Property Name="DocNum" Type="int" />
+          <Property Name="Series" Type="int" />
+          <Property Name="CardCode" Type="nvarchar(max)" />
+          <Property Name="DocDate" Type="datetime" />
+          <Property Name="DocDueDate" Type="datetime" />
+          <Property Name="TaxDate" Type="datetime" />
+          <Property Name="DocType" Type="int" Nullable="false" />
+          <Property Name="DocCurrency" Type="nvarchar(max)" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+          <Property Name="PaymentGroupCode" Type="int" />
+          <Property Name="SalesPersonCode" Type="int" />
+          <Property Name="Project" Type="nvarchar(max)" />
+          <Property Name="Indicator" Type="nvarchar(max)" />
+          <Property Name="ShipToCode" Type="nvarchar(max)" />
+          <Property Name="Address2" Type="nvarchar(max)" />
+          <Property Name="DocumentsOwner" Type="int" />
+          <Property Name="AgentCode" Type="nvarchar(max)" />
+          <Property Name="TransportationCode" Type="int" />
+          <Property Name="NumAtCard" Type="nvarchar(max)" />
+          <Property Name="ContactPersonCode" Type="int" />
+          <Property Name="DocEntry" Type="int" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="U_RX_ORIREQ" Type="nvarchar(max)" />
+          <Property Name="U_EXX_NRODEPDE" Type="nvarchar(max)" />
+          <Property Name="_DestinationSapDb" Type="nvarchar(max)" />
+          <Property Name="_AppSource" Type="int" Nullable="false" />
+          <Property Name="_IsUpdate" Type="bit" Nullable="false" />
+          <Property Name="_SaveAsDraft" Type="bit" />
+          <Property Name="_MigrationState" Type="int" />
+          <Property Name="_MigrationDate" Type="datetime" />
+          <Property Name="_MigrationErrorType" Type="int" />
+          <Property Name="_MigrationErrorMessage" Type="nvarchar(max)" />
+          <Property Name="_MigrationMailContentBody" Type="nvarchar(max)" />
+          <Property Name="_MigrationMailWasSended" Type="bit" />
+          <Property Name="_MigrationMailDate" Type="datetime" />
+          <Property Name="_MigrationObs" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MigrationDocumentLine">
+          <Key>
+            <PropertyRef Name="_MigrationDocumentLineId" />
+          </Key>
+          <Property Name="_MigrationDocumentLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="_ExternalId" Type="nvarchar(max)" />
+          <Property Name="_ParentExternalId" Type="nvarchar(max)" />
+          <Property Name="LineNum" Type="int" />
+          <Property Name="SalesPersonCode" Type="int" />
+          <Property Name="ItemCode" Type="nvarchar(max)" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="UnitPrice" Type="float" />
+          <Property Name="DiscountPercent" Type="float" />
+          <Property Name="WarehouseCode" Type="nvarchar(max)" />
+          <Property Name="TaxCode" Type="nvarchar(max)" />
+          <Property Name="Currency" Type="nvarchar(max)" />
+          <Property Name="ProjectCode" Type="nvarchar(max)" />
+          <Property Name="ShipToDescription" Type="nvarchar(max)" />
+          <Property Name="DisccountPercent" Type="float" />
+          <Property Name="LineTotal" Type="float" />
+          <Property Name="U_RX_STKDIS" Type="float" />
+          <Property Name="U_RX_STKRSV" Type="float" />
+          <Property Name="U_RX_STOKCD" Type="float" />
+          <Property Name="U_RX_PRIADD" Type="nvarchar(max)" />
+          <Property Name="U_RX_DSCADD" Type="nvarchar(max)" />
+          <Property Name="U_EXX_FE_TPVU" Type="nvarchar(max)" />
+          <Property Name="U_EXX_FE_TAIGV" Type="nvarchar(max)" />
+          <Property Name="U_RX_MARCA" Type="nvarchar(max)" />
+          <Property Name="U_RX_ACCPED" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="DB_SAPMIGRATIONModelStoreContainer">
+          <EntitySet Name="MigrationDocument" EntityType="Self.MigrationDocument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MigrationDocumentLine" EntityType="Self.MigrationDocumentLine" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_SAPMIGRATIONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DB_SAPMIGRATIONEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MigrationDocument" EntityType="DB_SAPMIGRATIONModel.MigrationDocument" />
+          <EntitySet Name="MigrationDocumentLine" EntityType="DB_SAPMIGRATIONModel.MigrationDocumentLine" />
+        </EntityContainer>
+        <EntityType Name="MigrationDocument">
+          <Key>
+            <PropertyRef Name="C_MigrationDocumentId" />
+          </Key>
+          <Property Name="C_MigrationDocumentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_ExternalId" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DocObjectCode" Type="Int32" Nullable="false" />
+          <Property Name="ObjectType" Type="Int32" />
+          <Property Name="DocumentSubType" Type="Int32" />
+          <Property Name="DocNum" Type="Int32" />
+          <Property Name="Series" Type="Int32" />
+          <Property Name="CardCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DocDate" Type="DateTime" Precision="3" />
+          <Property Name="DocDueDate" Type="DateTime" Precision="3" />
+          <Property Name="TaxDate" Type="DateTime" Precision="3" />
+          <Property Name="DocType" Type="Int32" Nullable="false" />
+          <Property Name="DocCurrency" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentGroupCode" Type="Int32" />
+          <Property Name="SalesPersonCode" Type="Int32" />
+          <Property Name="Project" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Indicator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShipToCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DocumentsOwner" Type="Int32" />
+          <Property Name="AgentCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TransportationCode" Type="Int32" />
+          <Property Name="NumAtCard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPersonCode" Type="Int32" />
+          <Property Name="DocEntry" Type="Int32" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="U_RX_ORIREQ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_EXX_NRODEPDE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_DestinationSapDb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_AppSource" Type="Int32" Nullable="false" />
+          <Property Name="C_IsUpdate" Type="Boolean" Nullable="false" />
+          <Property Name="C_SaveAsDraft" Type="Boolean" />
+          <Property Name="C_MigrationState" Type="Int32" />
+          <Property Name="C_MigrationDate" Type="DateTime" Precision="3" />
+          <Property Name="C_MigrationErrorType" Type="Int32" />
+          <Property Name="C_MigrationErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_MigrationMailContentBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_MigrationMailWasSended" Type="Boolean" />
+          <Property Name="C_MigrationMailDate" Type="DateTime" Precision="3" />
+          <Property Name="C_MigrationObs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MigrationDocumentLine">
+          <Key>
+            <PropertyRef Name="C_MigrationDocumentLineId" />
+          </Key>
+          <Property Name="C_MigrationDocumentLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_ExternalId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_ParentExternalId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LineNum" Type="Int32" />
+          <Property Name="SalesPersonCode" Type="Int32" />
+          <Property Name="ItemCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="UnitPrice" Type="Double" />
+          <Property Name="DiscountPercent" Type="Double" />
+          <Property Name="WarehouseCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaxCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Currency" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShipToDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DisccountPercent" Type="Double" />
+          <Property Name="LineTotal" Type="Double" />
+          <Property Name="U_RX_STKDIS" Type="Double" />
+          <Property Name="U_RX_STKRSV" Type="Double" />
+          <Property Name="U_RX_STOKCD" Type="Double" />
+          <Property Name="U_RX_PRIADD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_RX_DSCADD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_EXX_FE_TPVU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_EXX_FE_TAIGV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_RX_MARCA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_RX_ACCPED" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_SAPMIGRATIONModelStoreContainer" CdmEntityContainer="DB_SAPMIGRATIONEntities">
+          <EntitySetMapping Name="MigrationDocument">
+            <EntityTypeMapping TypeName="DB_SAPMIGRATIONModel.MigrationDocument">
+              <MappingFragment StoreEntitySet="MigrationDocument">
+                <ScalarProperty Name="C_MigrationObs" ColumnName="_MigrationObs" />
+                <ScalarProperty Name="C_MigrationMailDate" ColumnName="_MigrationMailDate" />
+                <ScalarProperty Name="C_MigrationMailWasSended" ColumnName="_MigrationMailWasSended" />
+                <ScalarProperty Name="C_MigrationMailContentBody" ColumnName="_MigrationMailContentBody" />
+                <ScalarProperty Name="C_MigrationErrorMessage" ColumnName="_MigrationErrorMessage" />
+                <ScalarProperty Name="C_MigrationErrorType" ColumnName="_MigrationErrorType" />
+                <ScalarProperty Name="C_MigrationDate" ColumnName="_MigrationDate" />
+                <ScalarProperty Name="C_MigrationState" ColumnName="_MigrationState" />
+                <ScalarProperty Name="C_SaveAsDraft" ColumnName="_SaveAsDraft" />
+                <ScalarProperty Name="C_IsUpdate" ColumnName="_IsUpdate" />
+                <ScalarProperty Name="C_AppSource" ColumnName="_AppSource" />
+                <ScalarProperty Name="C_DestinationSapDb" ColumnName="_DestinationSapDb" />
+                <ScalarProperty Name="U_EXX_NRODEPDE" ColumnName="U_EXX_NRODEPDE" />
+                <ScalarProperty Name="U_RX_ORIREQ" ColumnName="U_RX_ORIREQ" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="DocEntry" ColumnName="DocEntry" />
+                <ScalarProperty Name="ContactPersonCode" ColumnName="ContactPersonCode" />
+                <ScalarProperty Name="NumAtCard" ColumnName="NumAtCard" />
+                <ScalarProperty Name="TransportationCode" ColumnName="TransportationCode" />
+                <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+                <ScalarProperty Name="DocumentsOwner" ColumnName="DocumentsOwner" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="ShipToCode" ColumnName="ShipToCode" />
+                <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="SalesPersonCode" ColumnName="SalesPersonCode" />
+                <ScalarProperty Name="PaymentGroupCode" ColumnName="PaymentGroupCode" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="DocCurrency" ColumnName="DocCurrency" />
+                <ScalarProperty Name="DocType" ColumnName="DocType" />
+                <ScalarProperty Name="TaxDate" ColumnName="TaxDate" />
+                <ScalarProperty Name="DocDueDate" ColumnName="DocDueDate" />
+                <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+                <ScalarProperty Name="CardCode" ColumnName="CardCode" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="DocumentSubType" ColumnName="DocumentSubType" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="DocObjectCode" ColumnName="DocObjectCode" />
+                <ScalarProperty Name="C_ExternalId" ColumnName="_ExternalId" />
+                <ScalarProperty Name="C_MigrationDocumentId" ColumnName="_MigrationDocumentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MigrationDocumentLine">
+            <EntityTypeMapping TypeName="DB_SAPMIGRATIONModel.MigrationDocumentLine">
+              <MappingFragment StoreEntitySet="MigrationDocumentLine">
+                <ScalarProperty Name="U_RX_ACCPED" ColumnName="U_RX_ACCPED" />
+                <ScalarProperty Name="U_RX_MARCA" ColumnName="U_RX_MARCA" />
+                <ScalarProperty Name="U_EXX_FE_TAIGV" ColumnName="U_EXX_FE_TAIGV" />
+                <ScalarProperty Name="U_EXX_FE_TPVU" ColumnName="U_EXX_FE_TPVU" />
+                <ScalarProperty Name="U_RX_DSCADD" ColumnName="U_RX_DSCADD" />
+                <ScalarProperty Name="U_RX_PRIADD" ColumnName="U_RX_PRIADD" />
+                <ScalarProperty Name="U_RX_STOKCD" ColumnName="U_RX_STOKCD" />
+                <ScalarProperty Name="U_RX_STKRSV" ColumnName="U_RX_STKRSV" />
+                <ScalarProperty Name="U_RX_STKDIS" ColumnName="U_RX_STKDIS" />
+                <ScalarProperty Name="LineTotal" ColumnName="LineTotal" />
+                <ScalarProperty Name="DisccountPercent" ColumnName="DisccountPercent" />
+                <ScalarProperty Name="ShipToDescription" ColumnName="ShipToDescription" />
+                <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="WarehouseCode" ColumnName="WarehouseCode" />
+                <ScalarProperty Name="DiscountPercent" ColumnName="DiscountPercent" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="SalesPersonCode" ColumnName="SalesPersonCode" />
+                <ScalarProperty Name="LineNum" ColumnName="LineNum" />
+                <ScalarProperty Name="C_ParentExternalId" ColumnName="_ParentExternalId" />
+                <ScalarProperty Name="C_ExternalId" ColumnName="_ExternalId" />
+                <ScalarProperty Name="C_MigrationDocumentLineId" ColumnName="_MigrationDocumentLineId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
