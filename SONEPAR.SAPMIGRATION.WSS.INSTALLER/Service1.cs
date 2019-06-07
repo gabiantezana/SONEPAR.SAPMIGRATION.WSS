@@ -17,7 +17,7 @@ namespace SONEPAR.SAPMIGRATION.WSS.INSTALLER
             InitializeComponent();
         }
 
-        protected override void OnStart(string[] args)
+        protected override void OnStart(string[] args) 
         {
 
         }

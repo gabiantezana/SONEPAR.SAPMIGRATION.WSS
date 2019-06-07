@@ -12,7 +12,7 @@ namespace SONEPAR.SAPMIGRATION.WSS.INSTALLER
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static void Main() //GA
+        static void Main() //GAP
         {
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
